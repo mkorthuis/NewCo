@@ -3,11 +3,11 @@ import {
   Button
 } from 'react-bootstrap'
 
-const Home = () => (
+const Quiz = () => (
   <div>
-    <h1>Home Page</h1>
+    <h1>Are you low risk?</h1>
     <p>Add your content here</p>
   </div>
 )
 
-export default Home
+export default Quiz

@@ -3,11 +3,11 @@ import {
   Button
 } from 'react-bootstrap'
 
-const Home = () => (
+const Login = () => (
   <div>
-    <h1>Home Page</h1>
+    <h1>Customers signin here</h1>
     <p>Add your content here</p>
   </div>
 )
 
-export default Home
+export default Login
