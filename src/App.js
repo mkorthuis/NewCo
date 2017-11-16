@@ -7,7 +7,6 @@ import {
 } from 'react-router-dom'
 
 import logo from './logo.svg';
-import './App.css';
 
 import SignUp from './containers/signup'
 import Quiz from './containers/quiz'
