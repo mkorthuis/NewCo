@@ -34,7 +34,7 @@ const Header = () => (
           <NavItem eventKey={2}>Quiz</NavItem>
         </LinkContainer>
         <LinkContainer to="/sign-up">
-          <NavItem eventKey={3}>Sign Up</NavItem>
+          <NavItem eventKey={3}>Get Free Quote</NavItem>
         </LinkContainer>
         <LinkContainer to="/log-in">
           <NavItem eventKey={4}>Log in</NavItem>
