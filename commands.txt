@@ -9,6 +9,8 @@ yarn add redux react-redux react-router-dom react-router-redux@next redux-thunk
 #For Running multiple commands
 yarn add npm-run-all
 
+yarn add lodash
+
 #Updates to package.json.
     "build-css": "node-sass-chokidar src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar src/ -o src/ --watch --recursive",
@@ -19,3 +21,5 @@ yarn add npm-run-all
 
 #.gitignore
 src/**/*.css
+
+https://github.com/rajaraodv/react-redux-blog/tree/master/public/src
