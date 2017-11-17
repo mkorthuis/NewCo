@@ -13,8 +13,10 @@ import Home from './components/home'
 import Login from './components/login'
 import Doctor from './components/doctor'
 import Header from './components/header'
+import Dashboard from './components/dashboard'
 
 class App extends Component {
+
   render() {
     return (
       <div className="App">
@@ -25,6 +27,7 @@ class App extends Component {
           <Route exact path="/quiz" component={Quiz} />
           <Route exact path="/sign-up" component={SignUp} />
           <Route exact path="/log-in" component={Login} />
+          <Route exact path="/dashboard" component={Dashboard} />
         </main>
       </div>
     );
