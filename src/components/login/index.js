@@ -8,7 +8,10 @@ import {
   FormGroup,
   FormControl,
   ControlLabel,
-  Button
+  Button,
+  Grid,
+  Row,
+  Col
 } from 'react-bootstrap';
 import {
   authenticate,
@@ -29,36 +32,46 @@ class Login extends Component {
     });
   }
 
-  render() {
+  loginForm() {
     const {
       username,
       password,
       authenticated
     } = this.props;
     return (
-      <div>
-        <h1>Customers signin here - {authenticated.toString()}</h1>
-        <form onSubmit = {this.handleSubmit}>
-          <FormGroup controlId="username">
-            <ControlLabel>Username</ControlLabel>
-            <FormControl 
-              componentClass="input" 
-              defaultValue={username} 
-              onChange={this.handleInputChange} />
-          </FormGroup>
-          <FormGroup controlId="password">
-            <ControlLabel>Password</ControlLabel>
-            <FormControl 
-              componentClass="input" 
-              type="password" 
-              defaultValue={password}
-              onChange={this.handleInputChange} />
-          </FormGroup>
-          <Button type="submit">
-            Submit
-          </Button>
-        </form>
-      </div>
+      <form onSubmit = {this.handleSubmit}>
+              <FormGroup controlId="username">
+                <ControlLabel>Username</ControlLabel>
+                <FormControl 
+                  componentClass="input" 
+                  defaultValue={username} 
+                  onChange={this.handleInputChange} />
+              </FormGroup>
+              <FormGroup controlId="password">
+                <ControlLabel>Password</ControlLabel>
+                <FormControl 
+                  componentClass="input" 
+                  type="password" 
+                  defaultValue={password}
+                  onChange={this.handleInputChange} />
+              </FormGroup>
+              <Button type="submit">
+                Submit
+              </Button>
+            </form>
+    );
+  }
+
+  render() {
+    return (
+      <Grid>
+        <Row>
+          <Col xs={12} md={6} mdOffset={6} >
+            <h1>Customers signin here</h1>
+            {this.loginForm()}
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 

@@ -1,6 +1,9 @@
 import {
   authenticateService
 } from '../service/Authentication'
+import {
+  push
+} from 'react-router-redux'
 
 const initState = {
   authenticated: false,
@@ -24,7 +27,17 @@ export const updateUser = (change) => ({
 export const authenticate = (username, password) => {
   return (dispatch) => {
     const res = authenticateService(username, password);
-    dispatch(updateUser(res))
+    dispatch(updateUser(res));
+    dispatch(push('/portal'));
+  }
+}
+
+export const signOut = () => {
+  return (dispatch) => {
+    dispatch(updateUser({
+      authenticated: false
+    }));
+    dispatch(push('/'));
   }
 }
 

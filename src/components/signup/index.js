@@ -5,7 +5,10 @@ import {
   FormGroup,
   HelpBlock,
   FormControl,
-  ControlLabel
+  ControlLabel,
+  Grid,
+  Row,
+  Col
 } from 'react-bootstrap';
 import {
   connect
@@ -37,11 +40,9 @@ class SignUp extends Component {
     });
   }
 
-  render() {
+  signUpForm() {
     return (
-      <div>
-        <h1>Enter your information to get a quote</h1>
-        <form>
+      <form>
           <FieldGroup
             id="firstName"
             type="text"
@@ -71,7 +72,20 @@ class SignUp extends Component {
             onChange={this.handleInputChange}
           />
         </form>
-      </div>
+    );
+  }
+
+  render() {
+    return (
+      <Grid>
+        <Row>
+          <Col>
+    <h1>Enter your information to get a quote</h1> {
+      this.signUpForm()
+    }
+          </Col>
+        </Row>
+      </Grid>
     );
   }
 }
