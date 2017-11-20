@@ -39,25 +39,25 @@ class Login extends Component {
     } = this.props;
     return (
       <form onSubmit = {this.handleSubmit}>
-              <FormGroup controlId="username">
-                <ControlLabel>Username</ControlLabel>
-                <FormControl 
-                  componentClass="input" 
-                  defaultValue={username} 
-                  onChange={this.handleInputChange} />
-              </FormGroup>
-              <FormGroup controlId="password">
-                <ControlLabel>Password</ControlLabel>
-                <FormControl 
-                  componentClass="input" 
-                  type="password" 
-                  defaultValue={password}
-                  onChange={this.handleInputChange} />
-              </FormGroup>
-              <Button type="submit">
-                Submit
-              </Button>
-            </form>
+        <FormGroup controlId="username">
+          <ControlLabel>Username</ControlLabel>
+          <FormControl 
+            componentClass="input" 
+            defaultValue={username} 
+            onChange={this.handleInputChange} />
+        </FormGroup>
+        <FormGroup controlId="password">
+          <ControlLabel>Password</ControlLabel>
+          <FormControl 
+            componentClass="input" 
+            type="password" 
+            defaultValue={password}
+            onChange={this.handleInputChange} />
+        </FormGroup>
+        <Button type="submit">
+          Submit
+        </Button>
+      </form>
     );
   }
 

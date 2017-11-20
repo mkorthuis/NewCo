@@ -2,77 +2,28 @@ import React, {
   Component
 } from 'react'
 import {
-  FormGroup,
-  HelpBlock,
-  FormControl,
-  ControlLabel,
   Grid,
   Row,
-  Col
+  Col,
 } from 'react-bootstrap';
 import {
   connect
 } from 'react-redux'
-import {
-  updateUser
-} from '../../actions/User'
+import SignUpPageOne from './PageOne'
+import SignUpPageTwo from './PageTwo'
 
-function FieldGroup({
-  id,
-  label,
-  help,
-  ...props
-}) {
-  return (
-    <FormGroup controlId={id}>
-      {label && <ControlLabel>{label}</ControlLabel>}
-      <FormControl {...props} />
-      {help && <HelpBlock>{help}</HelpBlock>}
-    </FormGroup>
-  );
-}
 
 class SignUp extends Component {
-  handleInputChange = (evt) => {
-    evt.preventDefault();
-    this.props.updateUser({
-      [evt.target.id]: evt.target.value
-    });
-  }
 
-  signUpForm() {
-    return (
-      <form>
-          <FieldGroup
-            id="firstName"
-            type="text"
-            placeholder="First Name"
-            defaultValue={this.props.firstName} 
-            onChange={this.handleInputChange}
-          />
-          <FieldGroup
-            id="lastName"
-            type="text"
-            placeholder="Last Name"
-            defaultValue={this.props.lastName} 
-            onChange={this.handleInputChange}
-          />
-          <FieldGroup
-            id="email"
-            type="text"
-            placeholder="Email"
-            defaultValue={this.props.email} 
-            onChange={this.handleInputChange}
-          />
-          <FieldGroup
-            id="phone"
-            type="text"
-            placeholder="Phone"
-            defaultValue={this.props.phone} 
-            onChange={this.handleInputChange}
-          />
-        </form>
-    );
+
+  getPage() {
+    switch (this.props.page) {
+      case 2:
+        return <SignUpPageTwo />;
+      case 1:
+      default:
+        return <SignUpPageOne />;
+    }
   }
 
   render() {
@@ -80,11 +31,11 @@ class SignUp extends Component {
       <Grid>
         <Row>
           <Col>
-    <h1>Enter your information to get a quote</h1> {
-      this.signUpForm()
-    }
+            <h1>Lets get you started</h1>
+            <p>We promise this wont take long</p> 
           </Col>
         </Row>
+            {this.getPage()}
       </Grid>
     );
   }
@@ -93,11 +44,6 @@ class SignUp extends Component {
 
 export default connect(
   (state) => ({
-    firstName: state.user.firstName,
-    lastName: state.user.lastName,
-    email: state.user.email,
-    phone: state.user.phone
-  }), {
-    updateUser
-  }
+    page: state.signUp.page
+  }), {}
 )(SignUp)

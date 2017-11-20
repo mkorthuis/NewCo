@@ -11,6 +11,7 @@ import {
   routerReducer
 } from 'react-router-redux'
 import userReducer from '../reducers/User'
+import signUpReducer from '../reducers/SignUp'
 import createHistory from 'history/createBrowserHistory'
 import thunk from 'redux-thunk'
 
@@ -25,7 +26,8 @@ const middleware = [
 
 const reducer = combineReducers({
   router: routerReducer,
-  user: userReducer
+  user: userReducer,
+  signUp: signUpReducer
 })
 
 if (process.env.NODE_ENV === 'development') {
