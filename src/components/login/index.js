@@ -16,7 +16,7 @@ import {
 import {
   authenticate,
   updateUser
-} from '../../reducers/User'
+} from '../../actions/User'
 
 class Login extends Component {
 
@@ -35,8 +35,7 @@ class Login extends Component {
   loginForm() {
     const {
       username,
-      password,
-      authenticated
+      password
     } = this.props;
     return (
       <form onSubmit = {this.handleSubmit}>

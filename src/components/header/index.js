@@ -12,7 +12,7 @@ import {
 } from 'react-router-bootstrap';
 import {
   signOut
-} from '../../reducers/User'
+} from '../../actions/User'
 import {
   connect
 } from 'react-redux'

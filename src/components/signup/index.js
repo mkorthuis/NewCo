@@ -15,7 +15,7 @@ import {
 } from 'react-redux'
 import {
   updateUser
-} from '../../reducers/User'
+} from '../../actions/User'
 
 function FieldGroup({
   id,
